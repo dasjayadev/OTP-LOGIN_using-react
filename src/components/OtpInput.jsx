@@ -35,7 +35,14 @@ const OtpInput = ({ length = 6, onOtpSubmit = () => {} }) => {
   };
 
   
-  let clickHandler = () => {};
+  let clickHandler = (index) => {
+    inputRef.current[index].setSelectionRange(1,1)
+
+    //optional
+    if(index > 0 && !otp[index - 1]){
+      inputRef.current[otp.indexof("")].focus();
+    }
+  };
 
 
   let keyDownHandler = (index, event) => {
